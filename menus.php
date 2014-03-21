@@ -8,7 +8,7 @@
 * @category PHP
 * @package  Menus
 * @author   Jean-Michel Leyrie <jean-michel.leyrie (at) viveris.fr>
-* @license  http://www.gnu.org/licenses/gpl-3.0.html GPLv3
+* @license  http://creativecommons.org/licenses/by-nc/4.0/ CC-BY-NC 
 * @link     http://www.viveris.fr
 
 **/
