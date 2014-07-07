@@ -1,4 +1,4 @@
-<table id="info" class="radius">
+<table id="info">
     <tr><td>
         <h4>Nouvelles</h4>
         <p>

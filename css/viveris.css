@@ -1,0 +1,113 @@
+* {
+    font-family: "Lucida Sans Unicode","Lucida Grande",Sans-Serif;
+}
+
+body {
+    background-color: #eeeeee ;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    line-height:1.5;
+    font-size:small;
+    color: rgb(0,0,0);
+}
+
+.row.full-width {
+    width: 100%;
+    max-width: 100%; 
+}
+
+.row.spaced {
+    margin:10px 0;
+}
+
+.centered {
+    text-align:center;
+}
+
+h1,h2,h4,h5,h6 { 
+    color: #0057A3;
+    font-family:Geneva, Arial, Helvetica, sans-serif;
+    font-weight: normal; 
+    font-variant : small-caps;
+    font-size: 18pt;
+}
+
+h1 { 
+    text-align:center;
+}
+
+h3 { 
+    font-size: 14pt; 
+}
+
+h4 { 
+    font-size: 1.5em; 
+    line-height: 1.25; 
+    margin-bottom:0.5em;
+}
+
+#info {
+    text-align:center;
+    padding:0 5px 10px 5px;
+    background:#e0e0e0;
+    border:2px solid #0079b2;
+    margin-top:10px;
+    border-radius:10px;
+}
+
+.shadow10 {
+    -moz-box-shadow: 10px 10px 20px #888;  
+    -webkit-box-shadow: 10px 10px 20px #888;  
+    box-shadow: 10px 10px 20px #888;
+}
+
+div#footer {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    background-color:white ;
+    color:  #808080;
+    text-align:center;
+    -moz-box-shadow: 10px 10px 20px #888;  
+    -webkit-box-shadow: 10px 10px 20px #888;  
+    box-shadow: 10px 10px 20px #888;
+}
+
+div#footer a:link, a:visited , a:hover, a:focus, a:active 
+{
+    text-decoration:none;
+    font-style: normal;
+    color: #808080;
+}
+
+div#footer a:hover 
+{
+    font-style: italic;
+    color: #808080;
+
+}
+
+#footerMenu {
+    border:0px;
+    text-align:center;
+    border-style:solid;
+    border-bottom-width : 1px;
+    font-weight: bold;
+    vertical-align:top;
+}
+
+#footerMenu > li {
+    white-space: nowrap;
+    display: inline;
+    margin: 0 70px;
+}
+
+#opensand-features em
+{
+    font-weight: bold;
+}
+
+#opensand-features div
+{
+    border-top: 1px rgba(0,0,0,0.2) solid;
+    padding-top: 20px;
+}

@@ -1,6 +1,5 @@
-<h1 style="padding-left: 100px; background-image: url('./projects/rohc/rohc_logo_78x78.png'); background-repeat: no-repeat; margin-bottom: 2em;">
-ROHC<br>compression d'ent&ecirc;tes r&eacute;seau 
-</h1>
+<h1><img src="./projects/rohc/rohc_logo_78x78.png" alt="Logo"/> ROHC</h1>
+<h1>compression d'ent&ecirc;tes r&eacute;seau</h1>
 
 <h2>Pr&eacute;sentation</h2>
 <p>Le protocole <acronym title="RObust Header Compression">ROHC</acronym> est une

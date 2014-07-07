@@ -1,6 +1,5 @@
-<h1 style="padding-left: 100px; background-image: url('./projects/rohc/rohc_logo_78x78.png'); background-repeat: no-repeat; margin-bottom: 2em;">
-Tunnel IP/ROHC<br>tunnel point &agrave; point avec compression ROHC
-</h1>
+<h1><img src="./projects/rohc/rohc_logo_78x78.png" alt="Logo"/> Tunnel IP/ROHC</h1>
+<h1>tunnel point &agrave; point avec compression ROHC</h1>
 
 <h2>Pr&eacute;sentation</h2>
 <p>Le tunnel IP/ROHC &eacute;tablit un tunnel point &agrave; point entre deux
@@ -16,4 +15,7 @@ Tunnel IP/ROHC<br>tunnel point &agrave; point avec compression ROHC
 <h2>Informations techniques</h2>
 <p>Les informations techniques du projet sont disponibles sur le
    <a href="http://rohc-lib.org/wiki/doku.php?id=summary#ip_rohc_tunnel"
-      title="tunnel IP/ROHC">wiki du projet ROHC</a>.</p>
+      title="tunnel IP/ROHC">
+      Wiki du projet ROHC
+    </a>
+</p>

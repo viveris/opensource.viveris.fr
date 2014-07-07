@@ -2,7 +2,7 @@
 Auxrames : Suivi des affectations de personnel
 </h1>
 
-<p style="text-align : center;"><img src="./projects/auxrames/auxrames56.png" alt="Auxrames"></p>
+<p style="text-align : center;"><img src="./projects/auxrames/galere.png" alt="Auxrames"></p>
 <p>Auxrames permet de visualiser rapidement les affectations d'une &eacute;quipe.</p>
 
 <p align="center"><a href="http://auxrames.sourceforge.net/demo/index.php">D&eacute;monstration</a></p>

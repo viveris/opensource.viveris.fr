@@ -6,91 +6,90 @@
 * PHP version 5
 *
 * @category PHP
-* @package  Menus
-* @author   Jean-Michel Leyrie <jean-michel.leyrie (at) viveris.fr>
-* @license  http://creativecommons.org/licenses/by-nc/4.0/ CC-BY-NC 
-* @link     http://www.viveris.fr
-
+* @package Menus
+* @author Jean-Michel Leyrie <jean-michel.leyrie (at) viveris.fr>
+* @license http://creativecommons.org/licenses/by-nc/4.0/ CC-BY-NC
+* @link http://www.viveris.fr
 **/
 
 class CMenu
 {
 
     /** \brief Copy constructor
-    *
-    * @param [in] $i_name XML node to copy
-    *
-    * @return new instance
-    */
-    public function CMenu($i_name)
-    {
-        if (is_array($i_name)) {
-            foreach ($i_name as $k=>$v) {
-                $this->$k = $i_name[$k];
-            }
+*
+* @param [in] $i_name XML node to copy
+*
+* @return new instance
+*/
+public function CMenu($i_name)
+{
+    if (is_array($i_name)) {
+        foreach ($i_name as $k=>$v) {
+            $this->$k = $i_name[$k];
         }
     }
+}
 
     /** \brief name accessor
-    *
-    * @return String "name"
-    */
-    public function getName()
-    {
-        return $this->name;
-    }
+*
+* @return String "name"
+*/
+public function getName()
+{
+    return $this->name;
+}
 
     /** \brief url accessor
-    *
-    * @return String "url"
-    */
-    public function getUrl()
-    {
-        return $this->url;
-    }
+*
+* @return String "url"
+*/
+public function getUrl()
+{
+    return $this->url;
+}
 
     /** \brief text accessor
-    *
-    * @return String "text"
-    */
-    public function getText()
-    {
-        return $this->text;
-    }
+*
+* @return String "text"
+*/
+public function getText()
+{
+    return $this->text;
+}
 
     /** \brief valid accessor
-    *
-    * @return String "valid"
-    */
-    public function getValid()
-    {
-        return $this->valid;
-    }
-    
+*
+* @return String "valid"
+*/
+public function getValid()
+{
+    return $this->valid;
+}
+
     /** \brief rank accessor
-    *
-    * @return String "rank"
-    */
-    public function getRank()
-    {
-        return $this->rank;
-    }
-    
+*
+* @return String "rank"
+*/
+public function getRank()
+{
+    return $this->rank;
+}
+
     /** \brief name anchor
-    *
-    * @return String "anchor"
-    */
-    public function getAnchor()
-    {
-        return $this->anchor;
-    }
-    
-    private $name;   // Name
-    private $url;    // Url of the page to display
-    private $text;   // Text displayed in the url
+*
+* @return String "anchor"
+*/
+public function getAnchor()
+{
+    return $this->anchor;
+}
+
+    private $name; // Name
+    private $url; // Url of the page to display
+    private $text; // Text displayed in the url
 
     static $fsm_inFolder = 0;
-    static $fsm_numDiv   = 0;
+    static $fsm_numDiv = 0;
 }
 
 /** \brief Read a complete XML file
@@ -103,7 +102,7 @@ function readDatabase($filename)
 {
 
     // read the xml database of aminoacids
-    $data   = implode("", file($filename));
+    $data = implode("", file($filename));
     $parser = xml_parser_create();
     xml_parser_set_option($parser, XML_OPTION_CASE_FOLDING, 0);
     xml_parser_set_option($parser, XML_OPTION_SKIP_WHITE, 1);
@@ -117,12 +116,12 @@ function readDatabase($filename)
         if ($key == "item") {
             $molranges = $val;
             
-            // each contiguous pair of array entries are the 
+            // each contiguous pair of array entries are the
             // lower and upper range for each molecule definition
             for ($i=0; $i < count($molranges); $i+=2) {
                 $offset = $molranges[$i] + 1;
-                $len    = $molranges[$i + 1] - $offset;
-                $tdb[]  = parseMol(array_slice($values, $offset, $len));
+                $len = $molranges[$i + 1] - $offset;
+                $tdb[] = parseMol(array_slice($values, $offset, $len));
             }
 
         } else {
@@ -152,7 +151,7 @@ function parseMol($mvalues)
 * Display html code on standart output
 *
 * @param [in] $currentPage Current page displayed
-* @param [in] $lang        To return <text> in the right language
+* @param [in] $lang To return <text> in the right language
 *
 * @return none
 */
@@ -180,7 +179,7 @@ function showMenu($currentPage,$lang)
             //ie: Go back to root folder
             if (($db[$i]->getRank() == 0) && ($fsm_inFolder == 1)) {
                 $fsm_inFolder = 0;
-                $father       = "";
+                $father = "";
                 echo "\n</ul>\n</li>\n";
             }
             echo "\t<li><a href=\"?page=";
@@ -192,9 +191,7 @@ function showMenu($currentPage,$lang)
             } else {
                 echo "&amp;lang=$lang\">";
             }
-            
             echo $db[$i]->getText();
-            
             echo "</a>";
             if ($fsm_inFolder == 1) {
                 echo "</li>";
@@ -224,10 +221,10 @@ function showPage($currentPage)
         if (($db[$i]->getName() == $currentPage) &&
             ($db[$i]->getUrl() != "")) {
             include_once $db[$i]->getUrl();
-            break;
-        }
+        break;
     }
-    return $db[$i];
+}
+return $db[$i];
 }
 
 /** \brief Return the text argument of a page
@@ -247,6 +244,146 @@ function getPageText($page)
         }
     }
     return $text;
+}
+
+/** \brief Main entry point to display html menu structure for large screens
+*
+* Display html code on standart output, fitting Foundation's top-bar
+* @author Nicolas Dages <contact (at) nicolas-dages.fr>
+*
+* @param [in] $currentPage Current page displayed
+* @param [in] $lang To return <text> in the right language
+*
+* @return none
+*/
+function showLargeMenu($currentPage,$lang)
+{
+    $db = readDatabase("./menus.xml");
+    
+    echo "<nav class=\"top-bar hide-for-small full-width\" data-topbar>\n<ul class=\"title-area\">\n<li class=\"name\"></li>\n</ul>";
+    echo "<section class=\"top-bar-section\">\n";
+    echo "<ul class=\"left\">\n";
+
+    $fsm_inFolder = 0;
+    for ($i = 0 ; $i< count($db); $i++) {
+        if ($db[$i]->getValid() == "1") {
+            // if (root folder)&(not first item)&(not yet in a folder)
+            if (($db[$i]->getRank() == 0)&& ($i!=0) && ($fsm_inFolder == 0)) {
+                echo "</li>\n";
+            }
+            
+            //if (node not in root folder) and (not yet in a folder)
+            //ie: first step in a folder
+            if ($db[$i]->getRank() != 0){
+                if($fsm_inFolder == 0) {
+                    $fsm_inFolder = 1;
+                    echo "\n<ul class=\"dropdown\">\n";
+                }
+            }
+            
+            //if (node in root folder) and (already in a folder)
+            //ie: Go back to root folder
+            if (($db[$i]->getRank() == 0)&& ($fsm_inFolder == 1)){ 
+                $fsm_inFolder = 0;
+                $father = "";
+                echo "\n</ul>\n</li>\n";
+            }
+
+            //if (node in root folder) and (not yet in a folder)
+            //RUSTINE TRÈS MOCHE QUANT AU DERNIER ELT, NON DYNAMIQUE /!\
+            //TODO rendre dynamique en fct du contenu
+            if (($db[$i]->getRank() == 0)&& ($i!=0)&&($i!=count($db)-1) && ($fsm_inFolder == 0)){
+                echo "\t<li class=\"has-dropdown not-click\">";
+            }else{
+                echo "\t<li>";
+            }
+            echo "<a href=\"?page=";
+            echo $db[$i]->getName();
+            
+            //If current node is already displayed
+            if ($db[$i]->getName() == $currentPage) {
+                echo "&amp;lang=$lang\" id=\"current\">";
+            } else {
+                echo "&amp;lang=$lang\">";
+            }
+            echo $db[$i]->getText();
+            echo "</a>";
+            if ($fsm_inFolder == 1) {
+                echo "</li>";
+                echo "\n<li class=\"divider\"></li>\n";
+            }
+            echo "\n";
+        }
+    }
+    if ($fsm_inFolder == 1) {
+        echo "</ul>";
+    }
+    echo "</li>\n</ul>\n</section>\n</nav>\n";
+}
+
+/** \brief Main entry point to display html menu structure for tiny screens
+*
+* Display html code on standart output, fitting Foundation's off-canvas
+* @author Nicolas Dages <contact (at) nicolas-dages.fr>
+*
+* @param [in] $currentPage Current page displayed
+* @param [in] $lang To return <text> in the right language
+*
+* @return none
+*/
+function showTinyMenu($currentPage,$lang)
+{
+    $db = readDatabase("./menus.xml");
+    
+    echo "<nav class=\"tab-bar show-for-small\">\n";
+    echo "<section class=\"left-small\">\n";
+    echo "<a class=\"left-off-canvas-toggle menu-icon\"><span></span></a>\n";
+    echo "</section>\n";
+    echo "<section class=\"middle tab-bar-section\">\n";
+    echo "<h1 class=\"title\">Viveris Technologies</h1>\n";
+    echo "</section>\n";
+    echo "</nav>\n";
+    echo "<aside class=\"left-off-canvas-menu\">\n";
+    echo "<ul class=\"off-canvas-list\">\n";
+
+    $fsm_inFolder = 0;
+    for ($i = 0 ; $i< count($db); $i++) {
+        if ($db[$i]->getValid() == "1") {
+            //if (node in root folder) and (already in a folder)
+            //ie: Go back to root folder
+            if (($db[$i]->getRank() == 0)&& ($fsm_inFolder == 1)){ 
+                $fsm_inFolder = 0;
+                $father = "";
+                echo "\n<!-- lol -->\n";
+            }
+
+            //if (node in root folder) and (not yet in a folder)
+            if (($db[$i]->getRank() == 0) && ($fsm_inFolder == 0)){
+                echo "\t<li><label>";
+            }else{
+                echo "\t<li>";
+            }
+            echo "<a href=\"?page=";
+            echo $db[$i]->getName();
+            
+            //If current node is already displayed
+            if ($db[$i]->getName() == $currentPage) {
+                echo "&amp;lang=$lang\" id=\"current\">";
+            } else {
+                echo "&amp;lang=$lang\">";
+            }
+            echo $db[$i]->getText();
+            echo "</a>";
+            if ($fsm_inFolder == 0) {
+                echo "</label>";
+            }
+            echo "</li>\n";
+            if ($fsm_inFolder == 1) {
+                echo "\n\t<li class=\"divider\"></li>\n";
+            }
+        }
+    }
+    echo "</ul>\n</aside>\n";
 }
 
 ?>
