@@ -187,7 +187,7 @@ function showMenu($currentPage,$lang)
             
             //If current node is already displayed
             if ($db[$i]->getName() == $currentPage) {
-                echo "&amp;lang=$lang\" id=\"current\">";
+                echo "&amp;lang=$lang\" class=\"current\">";
             } else {
                 echo "&amp;lang=$lang\">";
             }
@@ -347,19 +347,14 @@ function showTinyMenu($currentPage,$lang)
     echo "<ul class=\"off-canvas-list\">\n";
 
     $fsm_inFolder = 0;
+    $bool_label = False;
     for ($i = 0 ; $i< count($db); $i++) {
         if ($db[$i]->getValid() == "1") {
-            //if (node in root folder) and (already in a folder)
-            //ie: Go back to root folder
-            if (($db[$i]->getRank() == 0)&& ($fsm_inFolder == 1)){ 
-                $fsm_inFolder = 0;
-                $father = "";
-                echo "\n<!-- lol -->\n";
-            }
 
             //if (node in root folder) and (not yet in a folder)
             if (($db[$i]->getRank() == 0) && ($fsm_inFolder == 0)){
                 echo "\t<li><label>";
+                $bool_label = True;
             }else{
                 echo "\t<li>";
             }
@@ -368,14 +363,15 @@ function showTinyMenu($currentPage,$lang)
             
             //If current node is already displayed
             if ($db[$i]->getName() == $currentPage) {
-                echo "&amp;lang=$lang\" id=\"current\">";
+                echo "&amp;lang=$lang\" class=\"current\">";
             } else {
                 echo "&amp;lang=$lang\">";
             }
             echo $db[$i]->getText();
             echo "</a>";
-            if ($fsm_inFolder == 0) {
+            if ($bool_label) {
                 echo "</label>";
+                $bool_label = False;
             }
             echo "</li>\n";
             if ($fsm_inFolder == 1) {

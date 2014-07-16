@@ -5,7 +5,7 @@ Auxrames : Suivi des affectations de personnel
 <p style="text-align : center;"><img src="./projects/auxrames/galere.png" alt="Auxrames"></p>
 <p>Auxrames permet de visualiser rapidement les affectations d'une &eacute;quipe.</p>
 
-<p align="center"><a href="http://auxrames.sourceforge.net/demo/index.php">D&eacute;monstration</a></p>
+<p style="text-align:center;"><a href="http://auxrames.sourceforge.net/demo/index.php">D&eacute;monstration</a></p>
 <h2>Avantages</h2>
 <ul>
     <li>Visualisation des ruptures de charge annonc&eacute;es</li>
@@ -22,7 +22,7 @@ Auxrames : Suivi des affectations de personnel
 </ul>
 
 <h2>Captures d'&eacute;crans</h2>
-<p align="center">
+<p style="text-align:center;">
     <a href="http://sourceforge.net/dbimage.php?id=331119">
     <img src="https://sourceforge.net/dbimage.php?id=331118" alt="Auxrames screenshot 1">
     </a>

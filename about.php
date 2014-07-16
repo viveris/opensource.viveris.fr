@@ -5,7 +5,7 @@
 
 
 <br/>
-<hr style="text-align:center;" width="50%">
+<hr/>
 <br/>
 
 
@@ -44,10 +44,10 @@
 </div>
 
 <br/>
-<hr style="text-align:center;" width="50%"/>
+<hr/>
 <br/>
 
 
 <p>A l'avenir, d'autres logiciels seront publi&eacute;s, ainsi que des r&eacute;alisations &eacute;lectroniques.</p>
-<p align="center">Bon surf !</p>
+<p style="text-align:center;">Bon surf !</p>
 <p>&nbsp;</p>

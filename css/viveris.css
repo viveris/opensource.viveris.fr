@@ -1,9 +1,9 @@
 * {
-    font-family: "Lucida Sans Unicode","Lucida Grande",Sans-Serif;
+    font-family: "Lucida Sans Unicode","Lucida Grande",Sans-Serif;80%
 }
 
 body {
-    background-color: #eeeeee ;
+    background-color: #eee ;
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
     line-height:1.5;
     font-size:small;
@@ -110,4 +110,26 @@ div#footer a:hover
 {
     border-top: 1px rgba(0,0,0,0.2) solid;
     padding-top: 20px;
+}
+
+.top-bar-section ul,
+.top-bar-section ul li.active > a,
+.top-bar-section ul li.active > a:hover,
+.top-bar-section li a:not(.button),
+.top-bar-section li a:not(.button):hover {
+    background-repeat: repeat-x;
+    background-image: url(images/menu-bg.gif);
+}
+
+hr {
+    text-align: center;
+    width: 50%;
+}
+
+.large-9 {
+   padding:0 25px;
+}
+
+#content-area {
+    margin-top:-6px;
 }

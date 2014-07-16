@@ -10,20 +10,18 @@ $title = getPageText($page);
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="Author" lang="fr" content="Viveris Technologies" />
+  <meta name="Description" content="Viveris Technologies Open Source Initiative" />
+  <meta name="Keywords" lang="fr" content="open source" />
+  <meta name="revisit-after" content="30" />
+  <!-- Copyright Viveris Technologies 2014 - All rights reserved -->
 
-  <meta name="Author" lang="fr" content="Viveris Technologies">
-  <meta name="Description" content="Viveris Technologies Open Source Initiative">
-  <meta name="Keywords" lang="fr" content="open source">
-  <meta name="revisit-after" content="30">
-  <meta name="Publisher" content="Viveris Technologies">
-  <meta name="Copyright" content="Viveris Technologies">
-  <meta http-equiv="content-style-type" content="text/css">
-
-  <link rel="stylesheet" href="css/foundation.css" />
-  <link rel="stylesheet" href="css/viveris.css" />
-  <script src="js/vendor/modernizr.js"></script>
-  <script src="js/vendor/jquery.js"></script>
-  <script src="js/foundation.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/foundation.css" />
+  <link rel="stylesheet" type="text/css" href="css/viveris.css" />
+  <link rel="stylesheet" type="text/css" href="css/menu_style.css">
+  <script type="text/javascript" src="js/vendor/modernizr.js"></script>
+  <script type="text/javascript" src="js/vendor/jquery.js"></script>
+  <script type="text/javascript" src="js/foundation.min.js"></script>
 
   <title><?php echo $title; ?></title> 
 </head>
@@ -46,24 +44,24 @@ $title = getPageText($page);
 
   <div class="row full-width" style="background:black;" >
     <strong class="show-for-medium-up">
-      <img id="Logo" src="./images/logo.png" alt="Viveris" style="width:100%" />
+      <img class="Logo" src="./images/logo.png" alt="Viveris" style="width:100%" />
     </strong>
     <strong class="show-for-small-only">
-      <img id="Logo" src="./images/logo-small.png" alt="Viveris" style="width:100%" />
+      <img class="Logo" src="./images/logo-small.png" alt="Viveris" style="width:100%" />
     </strong>
   </div>
 
-  <div id="full-width content-area" >
+  <div id="content-area" class="full-width">
     <div class="row">
 
       <div class="off-canvas-wrap docs-wrap " data-offcanvas="">
 
         <div class="inner-wrap">
-        <?php
-          showLargeMenu($page,$lang);
-          showTinyMenu($page,$lang);
-        ?>
+          <?php showTinyMenu($page,$lang); ?>
           <section class="main-section shadow10">
+            <div class="row full-width hide-for-small">
+              <?php showMenu($page,$lang); ?>
+            </div>
             <div class="row">
               <div class="columns large-3 hide-for-small">
                 <?php require_once("gauche.php"); ?>

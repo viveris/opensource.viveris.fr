@@ -1100,7 +1100,7 @@ button, .button {
   padding-right: 2rem;
   padding-bottom: 1.0625rem;
   padding-left: 2rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
   background-color: #2ba6cb;
   border-color: #2285a2;
   color: white;
@@ -2025,7 +2025,7 @@ meta.foundation-mq-topbar {
     text-align: center;
     color: #eeeeee;
     font-weight: normal;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
   .pricing-table .price {
     background-color: #f6f6f6;
@@ -2478,7 +2478,7 @@ a {
 p {
   font-family: inherit;
   font-weight: normal;
-  font-size: 1rem;
+  font-size: 0.8rem;
   line-height: 1.6;
   margin-bottom: 1.25rem;
   text-rendering: optimizeLegibility; }
@@ -2561,7 +2561,7 @@ code {
 ul,
 ol,
 dl {
-  font-size: 1rem;
+  font-size: 0.8rem;
   line-height: 1.6;
   margin-bottom: 1.25rem;
   list-style-position: outside;
@@ -2613,7 +2613,7 @@ dl dd {
 
 /* Abbreviations */
 abbr,
-acronym {
+abbr {
   text-transform: uppercase;
   font-size: 90%;
   color: #222222;
@@ -4122,7 +4122,7 @@ table {
   table caption {
     background: transparent;
     color: #222222;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: bold; }
   table thead {
     background: whitesmoke; }
