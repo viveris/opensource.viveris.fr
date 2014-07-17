@@ -1,13 +1,10 @@
-* {
-    font-family: "Lucida Sans Unicode","Lucida Grande",Sans-Serif;80%
-}
-
 body {
     background-color: #eee ;
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
     line-height:1.5;
     font-size:small;
     color: rgb(0,0,0);
+    text-align:justify;
 }
 
 .row.full-width {

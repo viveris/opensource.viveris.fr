@@ -44,48 +44,45 @@ $title = getPageText($page);
 
   <div class="row full-width" style="background:black;" >
     <strong class="show-for-medium-up">
-      <img class="Logo" src="./images/logo.png" alt="Viveris" style="width:100%" />
+      <span style="background:url(./images/logo.png) center center no-repeat; height:125px; display:block"></span>
     </strong>
     <strong class="show-for-small-only">
-      <img class="Logo" src="./images/logo-small.png" alt="Viveris" style="width:100%" />
+      <img src="./images/logo-small.png" alt="Viveris" style="width:100%" />
     </strong>
   </div>
 
-  <div id="content-area" class="full-width">
-    <div class="row">
+  <div id="content-area" class="row shadow10">
 
-      <div class="off-canvas-wrap docs-wrap " data-offcanvas="">
+    <div class="off-canvas-wrap docs-wrap " data-offcanvas="">
 
-        <div class="inner-wrap">
-          <?php showTinyMenu($page,$lang); ?>
-          <section class="main-section shadow10">
-            <div class="row full-width hide-for-small">
-              <?php showMenu($page,$lang); ?>
+      <div class="inner-wrap">
+        <?php showTinyMenu($page,$lang); ?>
+        <section class="main-section shadow10">
+          <div class="row full-width hide-for-small">
+            <?php showMenu($page,$lang); ?>
+          </div>
+          <div class="row">
+            <div class="columns large-3 hide-for-small">
+              <?php require_once("gauche.php"); ?>
             </div>
-            <div class="row">
-              <div class="columns large-3 hide-for-small">
-                <?php require_once("gauche.php"); ?>
-              </div>
-              <div class="columns large-9">
-                <?php showPage($page); ?>
-              </div>
+            <div class="columns large-9 text-justify">
+              <?php showPage($page); ?>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <a class="exit-off-canvas"></a>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="row">
-      <div class="columns large-12" id="footer">
-        <?php require_once ("footer.php"); ?>
+        <a class="exit-off-canvas"></a>
       </div>
     </div>
-
-    <p>&nbsp;</p>
   </div>
+
+  <div class="row">
+    <div class="columns large-12" id="footer">
+      <?php require_once ("footer.php"); ?>
+    </div>
+  </div>
+
+  <p>&nbsp;</p>
 
   <script>
     $(document).foundation();
