@@ -260,7 +260,7 @@ function showTinyMenu($currentPage,$lang)
 {
     $db = readDatabase("./menus.xml");
     
-    echo "<nav class=\"tab-bar show-for-small\" style=\"top:5px;\">\n";
+    echo "<nav class=\"tab-bar show-for-small\">\n";
     echo "<section class=\"left-small\">\n";
     echo "<a class=\"left-off-canvas-toggle menu-icon\"><span></span></a>\n";
     echo "</section>\n";

@@ -1,5 +1,5 @@
 body {
-    background-color: #fff ;
+    background-color: #eee ;
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
     line-height:1.5;
     font-size:small;
@@ -122,10 +122,6 @@ hr {
 
 .large-9 {
    padding:0 25px;
-}
-
-#content-area {
-    margin-top:-6px;
 }
 
 #Logo {

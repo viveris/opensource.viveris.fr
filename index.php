@@ -51,18 +51,18 @@ $title = getPageText($page);
     </strong>
   </div>
 
-  <div id="content-area" class="row shadow10">
+  <div id="content-area" class="row shadow10" style="background-color:#fff;">
 
     <div class="off-canvas-wrap docs-wrap " data-offcanvas="">
 
       <div class="inner-wrap">
         <?php showTinyMenu($page,$lang); ?>
         <section class="main-section shadow10">
-          <div class="row full-width hide-for-small">
+          <div class="row full-width hide-for-small" style="margin-top:-6px;">
             <?php showMenu($page,$lang); ?>
           </div>
           <div class="row">
-            <div class="columns large-3 hide-for-small">
+            <div class="columns large-3 hide-for-small" style="text-align:center">
               <?php include("gauche.php"); ?>
             </div>
             <div class="columns large-9 text-justify">
@@ -76,7 +76,7 @@ $title = getPageText($page);
     </div>
   </div>
 
-  <div class="row show-for-small-only">
+  <div class="row show-for-small-only" style="text-align:center;">
     <?php include("gauche.php"); ?>
   </div>
 

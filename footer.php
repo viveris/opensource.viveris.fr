@@ -13,3 +13,7 @@
    lang="en" title="Licence documentation PHP.net">Creative Commons Attribution&nbsp;3.0</a>
    provenant de <a href="http://php.net/xml_parse_into_struct" lang="en"
    title="Documentation for xml_parse_into_struct on php.net">php.net</a>.</p>
+<p class="center">
+<a href="https://twitter.com/Viveris_techno" class="twitter-follow-button" data-show-count="false" data-lang="fr" data-show-screen-name="false">Suivre @Viveris_techno</a>
+<script  type="text/javascript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</p>
