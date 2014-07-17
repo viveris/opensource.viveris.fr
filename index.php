@@ -44,7 +44,7 @@ $title = getPageText($page);
 
   <div class="row full-width" style="background:black;" >
     <strong class="show-for-medium-up">
-      <span style="background:url(./images/logo.png) center center no-repeat; height:125px; display:block"></span>
+    <span id="Logo"></span>
     </strong>
     <strong class="show-for-small-only">
       <img src="./images/logo-small.png" alt="Viveris" style="width:100%" />
@@ -77,7 +77,7 @@ $title = getPageText($page);
   </div>
 
   <div class="row">
-    <div class="columns large-12" id="footer">
+    <div class="columns large-12 shadow10" id="footer">
       <?php require_once ("footer.php"); ?>
     </div>
   </div>

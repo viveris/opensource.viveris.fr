@@ -52,9 +52,9 @@ h4 {
 }
 
 .shadow10 {
-    -moz-box-shadow: 10px 10px 20px #888;  
-    -webkit-box-shadow: 10px 10px 20px #888;  
-    box-shadow: 10px 10px 20px #888;
+    -webkit-box-shadow: 7px 7px 15px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    7px 7px 15px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         7px 7px 15px 0px rgba(50, 50, 50, 0.75);
 }
 
 div#footer {
@@ -64,9 +64,6 @@ div#footer {
     background-color:white ;
     color:  #808080;
     text-align:center;
-    -moz-box-shadow: 10px 10px 20px #888;  
-    -webkit-box-shadow: 10px 10px 20px #888;  
-    box-shadow: 10px 10px 20px #888;
 }
 
 div#footer a:link, a:visited , a:hover, a:focus, a:active 
@@ -129,4 +126,10 @@ hr {
 
 #content-area {
     margin-top:-6px;
+}
+
+#Logo {
+    background:url(../images/logo.png) center center no-repeat;
+    height:125px;
+    display:block;
 }

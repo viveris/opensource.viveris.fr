@@ -76,4 +76,5 @@
 .menu .current{
 	background:url(../images/current-bg.gif) top left repeat-x;
 	color:#ffffff;
+	z-index:2;
 }
