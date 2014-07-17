@@ -44,7 +44,7 @@ $title = getPageText($page);
 
   <div class="row full-width" style="background:black;" >
     <strong class="show-for-medium-up">
-    <span id="Logo"></span>
+      <span id="Logo"></span>
     </strong>
     <strong class="show-for-small-only">
       <img src="./images/logo-small.png" alt="Viveris" style="width:100%" />
@@ -63,7 +63,7 @@ $title = getPageText($page);
           </div>
           <div class="row">
             <div class="columns large-3 hide-for-small">
-              <?php require_once("gauche.php"); ?>
+              <?php include("gauche.php"); ?>
             </div>
             <div class="columns large-9 text-justify">
               <?php showPage($page); ?>
@@ -74,6 +74,10 @@ $title = getPageText($page);
         <a class="exit-off-canvas"></a>
       </div>
     </div>
+  </div>
+
+  <div class="row show-for-small-only">
+    <?php include("gauche.php"); ?>
   </div>
 
   <div class="row">

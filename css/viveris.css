@@ -1,5 +1,5 @@
 body {
-    background-color: #eee ;
+    background-color: #fff ;
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
     line-height:1.5;
     font-size:small;
@@ -9,7 +9,7 @@ body {
 
 .row.full-width {
     width: 100%;
-    max-width: 100%; 
+    max-width: 100%;
 }
 
 .row.spaced {
@@ -42,7 +42,7 @@ h4 {
     margin-bottom:0.5em;
 }
 
-#info {
+.info {
     text-align:center;
     padding:0 5px 10px 5px;
     background:#e0e0e0;

@@ -1,4 +1,4 @@
-<table id="info">
+<table class="info">
     <tr><td>
         <h4>Nouvelles</h4>
         <p>

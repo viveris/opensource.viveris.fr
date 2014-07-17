@@ -246,81 +246,6 @@ function getPageText($page)
     return $text;
 }
 
-/** \brief Main entry point to display html menu structure for large screens
-*
-* Display html code on standart output, fitting Foundation's top-bar
-* @author Nicolas Dages <contact (at) nicolas-dages.fr>
-*
-* @param [in] $currentPage Current page displayed
-* @param [in] $lang To return <text> in the right language
-*
-* @return none
-*/
-function showLargeMenu($currentPage,$lang)
-{
-    $db = readDatabase("./menus.xml");
-    
-    echo "<nav class=\"top-bar hide-for-small full-width\" data-topbar>\n<ul class=\"title-area\">\n<li class=\"name\"></li>\n</ul>";
-    echo "<section class=\"top-bar-section\">\n";
-    echo "<ul class=\"left\">\n";
-
-    $fsm_inFolder = 0;
-    for ($i = 0 ; $i< count($db); $i++) {
-        if ($db[$i]->getValid() == "1") {
-            // if (root folder)&(not first item)&(not yet in a folder)
-            if (($db[$i]->getRank() == 0)&& ($i!=0) && ($fsm_inFolder == 0)) {
-                echo "</li>\n";
-            }
-            
-            //if (node not in root folder) and (not yet in a folder)
-            //ie: first step in a folder
-            if ($db[$i]->getRank() != 0){
-                if($fsm_inFolder == 0) {
-                    $fsm_inFolder = 1;
-                    echo "\n<ul class=\"dropdown\">\n";
-                }
-            }
-            
-            //if (node in root folder) and (already in a folder)
-            //ie: Go back to root folder
-            if (($db[$i]->getRank() == 0)&& ($fsm_inFolder == 1)){ 
-                $fsm_inFolder = 0;
-                $father = "";
-                echo "\n</ul>\n</li>\n";
-            }
-
-            //if (node in root folder) and (not yet in a folder)
-            //RUSTINE TRÈS MOCHE QUANT AU DERNIER ELT, NON DYNAMIQUE /!\
-            //TODO rendre dynamique en fct du contenu
-            if (($db[$i]->getRank() == 0)&& ($i!=0)&&($i!=count($db)-1) && ($fsm_inFolder == 0)){
-                echo "\t<li class=\"has-dropdown not-click\">";
-            }else{
-                echo "\t<li>";
-            }
-            echo "<a href=\"?page=";
-            echo $db[$i]->getName();
-            
-            //If current node is already displayed
-            if ($db[$i]->getName() == $currentPage) {
-                echo "&amp;lang=$lang\" id=\"current\">";
-            } else {
-                echo "&amp;lang=$lang\">";
-            }
-            echo $db[$i]->getText();
-            echo "</a>";
-            if ($fsm_inFolder == 1) {
-                echo "</li>";
-                echo "\n<li class=\"divider\"></li>\n";
-            }
-            echo "\n";
-        }
-    }
-    if ($fsm_inFolder == 1) {
-        echo "</ul>";
-    }
-    echo "</li>\n</ul>\n</section>\n</nav>\n";
-}
-
 /** \brief Main entry point to display html menu structure for tiny screens
 *
 * Display html code on standart output, fitting Foundation's off-canvas
@@ -335,7 +260,7 @@ function showTinyMenu($currentPage,$lang)
 {
     $db = readDatabase("./menus.xml");
     
-    echo "<nav class=\"tab-bar show-for-small\">\n";
+    echo "<nav class=\"tab-bar show-for-small\" style=\"top:5px;\">\n";
     echo "<section class=\"left-small\">\n";
     echo "<a class=\"left-off-canvas-toggle menu-icon\"><span></span></a>\n";
     echo "</section>\n";
