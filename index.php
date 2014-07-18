@@ -1,4 +1,3 @@
-
 <?php header('Content-Type: text/html;charset=UTF-8');
 require_once("./menus.php");
 $lang = isset($_GET['lang']) ? $_GET['lang'] : "fr";
