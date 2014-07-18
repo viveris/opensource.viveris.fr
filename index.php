@@ -62,22 +62,18 @@ $title = getPageText($page);
             <?php showMenu($page,$lang); ?>
           </div>
           <div class="row">
-            <div class="columns large-3 hide-for-small" style="text-align:center">
+            <div class="columns large-2 hide-for-small" style="text-align:center">
               <?php include("gauche.php"); ?>
             </div>
             <div class="columns large-9 text-justify">
               <?php showPage($page); ?>
             </div>
-          </div>
+            <div class="columns large-1"></div>
         </section>
 
         <a class="exit-off-canvas"></a>
       </div>
     </div>
-  </div>
-
-  <div class="row show-for-small-only" style="text-align:center;">
-    <?php include("gauche.php"); ?>
   </div>
 
   <div class="row">

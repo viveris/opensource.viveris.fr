@@ -24,7 +24,7 @@
 <p>OpenSAND offre les fonctionnalit&eacute;s suivantes&nbsp;:</p>
 <hr/>
 <h2 class="centered">Fonctionnalit&eacute;s d'OpenSAND</h2>
-<div class="row" id="opensand-features">
+<div class="row" id="opensand-features" style="text-align:left;">
   <div class="columns large-4">
     <em>R&eacute;seau&nbsp;:</em>
     <ul>

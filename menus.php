@@ -249,6 +249,7 @@ function getPageText($page)
 /** \brief Main entry point to display html menu structure for tiny screens
 *
 * Display html code on standart output, fitting Foundation's off-canvas
+* Update 18/07/14 - Added another button linking to "Nouvelles" on the other side of the bar
 * @author Nicolas Dages <contact (at) nicolas-dages.fr>
 *
 * @param [in] $currentPage Current page displayed
@@ -266,6 +267,9 @@ function showTinyMenu($currentPage,$lang)
     echo "</section>\n";
     echo "<section class=\"middle tab-bar-section\">\n";
     echo "<h1 class=\"title\">Viveris Technologies</h1>\n";
+    echo "</section>\n";
+    echo "<section class=\"right-small\">\n";
+    echo "<a class=\"right-off-canvas-toggle menu-icon\"><span></span></a>\n";
     echo "</section>\n";
     echo "</nav>\n";
     echo "<aside class=\"left-off-canvas-menu\">\n";
@@ -305,6 +309,9 @@ function showTinyMenu($currentPage,$lang)
         }
     }
     echo "</ul>\n</aside>\n";
+    echo "<aside class=\"right-off-canvas-menu\">\n";
+    include "./gauche.php";
+    echo "\n</aside>\n";    
 }
 
 ?>
