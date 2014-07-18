@@ -14,10 +14,17 @@ $title = getPageText($page);
   <meta name="Keywords" lang="fr" content="open source" />
   <meta name="revisit-after" content="30" />
   <!-- Copyright Viveris Technologies 2014 - All rights reserved -->
-
   <link rel="stylesheet" type="text/css" href="css/foundation.css" />
   <link rel="stylesheet" type="text/css" href="css/viveris.css" />
   <link rel="stylesheet" type="text/css" href="css/menu_style.css">
+  <!--[if lte IE 9]>
+    <style type='text/css'>
+      .show-for-small {display:none !important}
+      .show-for-small-only {display:none !important}
+      aside {display:none !important}
+      div#footer {max-width:65em;}
+    </style>
+  <![endif]-->
   <script type="text/javascript" src="js/vendor/modernizr.js"></script>
   <script type="text/javascript" src="js/vendor/jquery.js"></script>
   <script type="text/javascript" src="js/foundation.min.js"></script>
@@ -68,10 +75,12 @@ $title = getPageText($page);
               <?php showPage($page); ?>
             </div>
             <div class="columns large-1"></div>
+          </div>
         </section>
 
         <a class="exit-off-canvas"></a>
       </div>
+
     </div>
   </div>
 
@@ -80,7 +89,6 @@ $title = getPageText($page);
       <?php require_once ("footer.php"); ?>
     </div>
   </div>
-
   <p>&nbsp;</p>
 
   <script>
