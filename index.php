@@ -66,10 +66,10 @@ $title = getPageText($page);
             <?php showMenu($page,$lang); ?>
           </div>
           <div class="row">
-            <div class="columns large-2 hide-for-small" style="text-align:center">
+            <div class="columns large-2 medium-3 hide-for-small" style="text-align:center">
               <?php include("gauche.php"); ?>
             </div>
-            <div class="columns large-9 text-justify">
+            <div class="columns large-9 medium-9 text-justify">
               <?php showPage($page); ?>
             </div>
             <div class="columns large-1"></div>
