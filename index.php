@@ -82,7 +82,7 @@ $title = getPageText($page);
   </div>
 
   <div class="row">
-    <div class="columns large-12 shadow10 bottomradius" id="footer">
+    <div class="columns large-12 shadow10" id="footer">
       <?php require_once ("footer.php"); ?>
     </div>
   </div>

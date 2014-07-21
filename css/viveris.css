@@ -64,7 +64,7 @@ div#footer {
     background-color:white ;
     color:  #808080;
     text-align:center;
-
+    border-radius: 10px;
 }
 
 div#footer a:link, a:visited , a:hover, a:focus, a:active 
