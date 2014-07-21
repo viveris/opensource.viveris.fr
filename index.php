@@ -18,12 +18,10 @@ $title = getPageText($page);
   <link rel="stylesheet" type="text/css" href="css/viveris.css" />
   <link rel="stylesheet" type="text/css" href="css/menu_style.css">
   <!--[if lte IE 9]>
-    <style type='text/css'>
-      .show-for-small {display:none !important}
-      .show-for-small-only {display:none !important}
-      aside {display:none !important}
-      div#footer {max-width:65em;}
-    </style>
+    <meta HTTP-EQUIV="REFRESH" content="0; url=./old/">
+    <script type="text/javascript">
+      window.location = "./old/";
+    </script>
   <![endif]-->
   <script type="text/javascript" src="js/vendor/modernizr.js"></script>
   <script type="text/javascript" src="js/vendor/jquery.js"></script>
