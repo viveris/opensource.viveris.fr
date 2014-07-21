@@ -18,9 +18,9 @@ $title = getPageText($page);
   <link rel="stylesheet" type="text/css" href="css/viveris.css" />
   <link rel="stylesheet" type="text/css" href="css/menu_style.css">
   <!--[if lte IE 9]>
-    <meta HTTP-EQUIV="REFRESH" content="0; url=./old/">
+    <meta HTTP-EQUIV="REFRESH" content="0; url=./ie/">
     <script type="text/javascript">
-      window.location = "./old/";
+      window.location = "./ie/";
     </script>
   <![endif]-->
   <script type="text/javascript" src="js/vendor/modernizr.js"></script>

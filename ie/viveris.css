@@ -1,0 +1,284 @@
+body {
+    background-color: #eeeeee ;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    line-height:1.5;
+    font-size:80%;
+    color: rgb(0,0,0);
+    margin:0px;
+    padding:0px;
+}
+
+div#colonne1 { 
+    text-align:center;
+    float: left; 
+    width: 160px; 
+    margin-right: 20px; 
+    margin-bottom: 10px;
+    background: white; 
+} 
+
+div#colonne2 { 
+    text-align:center;
+    float: right; 
+    width: 160px; 
+    margin-left: 20px; 
+    margin-bottom: 10px;
+    background: white; 
+} 
+div#centre { 
+    margin:auto;
+    width: 760px; 
+    margin-bottom: 10px;
+    background-color:white;
+    overflow: hidden; 
+    padding: 0px;
+    
+}
+
+table#info {
+    padding:0 5px 10px 5px;
+    text-align:center;
+    background:#e0e0e0;
+    border:2px solid #0079b2;
+    margin-left:5px;
+    margin-top:10px;
+}
+
+.center{
+text-align:center;
+}
+
+.spacer {
+  clear: both;
+}
+
+div#PageContainer {
+    margin-top:-6px;
+}
+
+div#Page {
+    margin : auto; 
+    width: 989px;
+	height:auto !important;
+	height:75%;
+	min-height:75%;
+    background-color:white;
+}
+img {border-width:0;}
+
+div#LogoBg {
+    background-color: black;
+}
+
+
+div#Logo {
+    background-color: black;
+    background-image: url(./images/logo.png);
+    background-repeat:no-repeat;
+    background-position:center top;
+    
+    width:100%;
+    height:143px;
+    margin:0px;
+    padding:0px;
+    text-align:center;
+}
+
+div#footer {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    background-color:white ;
+    width:989px;
+    color: 	#808080;
+    text-align:center;
+}
+
+div#footer a:link, a:visited , a:hover, a:focus, a:active 
+{
+    text-decoration:none;
+    font-style: normal;
+    color: #808080;
+}
+
+div#footer a:hover 
+{
+    font-style: italic;
+    color: #808080;
+
+}
+
+h1,h2,h4,h5,h6 { 
+	color: #0057A3;
+	font-family:Geneva, Arial, Helvetica, sans-serif;
+	font-weight: normal; 
+	font-variant : small-caps;
+	font-size: 18pt;
+}
+
+h1 { 
+    text-align:center;
+}
+
+h3 { 
+	font-size: 14pt; 
+}
+
+h4 { 
+	font-size: 1.5em; 
+	line-height: 1.25; 
+	margin-bottom:0.5em;
+}
+
+#centre p {
+	text-align: justify;
+}
+
+#centre p.figure
+{
+	counter-increment: figures_counter;
+	text-align: center;
+	font-style: italic;
+	margin-bottom: 3em;
+}
+#centre p.figure img
+{
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
+}
+#centre p.figure[title]:after
+{
+	content: "\0a\0a Figure " counter(figures_counter) ": " attr(title);
+}
+.shadow10
+{
+    -moz-box-shadow: 10px 10px 20px #888;  
+    -webkit-box-shadow: 10px 10px 20px #888;  
+    box-shadow: 10px 10px 20px #888;
+    margin : auto; 
+    width: 989px;
+    height:auto !important; /* real browsers */
+}
+
+.bottomradius {
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.radius {
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.divborder {
+    border-width: 0px 1px 1px;
+    border-color: darkgrey;
+    border-style: groove;
+}
+
+/******* Release table *******/
+#release
+{
+	font-size: 12px;
+	background: #fff;
+	margin: 45px;
+	width: 480px;
+	border-collapse: collapse;
+	text-align: left;
+}
+#release th
+{
+	font-size: 14px;
+	font-weight: normal;
+	color: #039;
+	padding: 10px 8px;
+	border-bottom: 2px solid #6678b1;
+}
+#release td
+{
+	color: #669;
+	padding: 9px 8px 0px 8px;
+}
+#release tbody tr:hover td
+{
+	color: #009;
+}
+/*****************************/
+
+#footerTable
+{
+    border:0px;
+    text-align:left;
+    margin : auto; 
+    border-style:solid;
+    border-bottom-width : 1px;
+}
+
+#footerTable td
+{
+    padding:0px 50px 0px 50px;
+    font-weight: bold;
+    vertical-align:top;
+}
+
+
+/******* projects table *******/
+#projects,
+#projects tr,
+#projects td
+{
+    border-collapse: separate;
+    border-spacing: 1em 3em;
+    font-weight: normal;
+}
+#projects td.project-logo
+{
+    text-align: center;
+    vertical-align: center;
+}
+#projects td.project-descr
+{
+    vertical-align: top;
+    text-align: left;
+}
+#projects h4
+{
+    text-align: center;
+}
+/*****************************/
+
+
+
+/******* OpenSAND table *******/
+#opensand-features,
+#opensand-features tr,
+#opensand-features td
+{
+    border-collapse: collapse;
+    border: thin solid black;
+    font-weight: normal;
+}
+#opensand-features td
+{
+    padding: 0.5em;
+    vertical-align: top;
+    text-align: left;
+}
+#opensand-features caption
+{
+    caption-side: bottom;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+#opensand-features em
+{
+    font-weight: bold;
+}
+/*****************************/
+
