@@ -61,18 +61,17 @@ $title = getPageText($page);
 
       <div class="inner-wrap">
         <?php showTinyMenu($page,$lang); ?>
-        <section class="main-section shadow10">
+        <section class="main-section shadow10 bottomradius">
           <div class="row full-width hide-for-small" style="margin-top:-6px;">
             <?php showMenu($page,$lang); ?>
           </div>
           <div class="row">
-            <div class="columns large-2 medium-3 hide-for-small" style="text-align:center">
+            <div class="columns large-3 medium-3 hide-for-small" style="text-align:center">
               <?php include("gauche.php"); ?>
             </div>
             <div class="columns large-9 medium-9 text-justify">
               <?php showPage($page); ?>
             </div>
-            <div class="columns large-1"></div>
           </div>
         </section>
 
@@ -83,7 +82,7 @@ $title = getPageText($page);
   </div>
 
   <div class="row">
-    <div class="columns large-12 shadow10" id="footer">
+    <div class="columns large-12 shadow10 bottomradius" id="footer">
       <?php require_once ("footer.php"); ?>
     </div>
   </div>
