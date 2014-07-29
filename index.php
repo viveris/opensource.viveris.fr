@@ -1,8 +1,21 @@
-<?php header('Content-Type: text/html;charset=UTF-8');
-require_once("./menus.php");
-$lang = isset($_GET['lang']) ? $_GET['lang'] : "fr";
-$page = isset($_GET['page']) ? $_GET['page'] : "about";
-$title = getPageText($page);
+<?php
+/**
+* File index.php
+* Accueil
+*
+* PHP version 5
+*
+* @category PHP
+* @package  Site
+* @author   Nicolas Dages <contact@nicolas-dages.fr>
+* @license  http://www.gnu.org/licenses/gpl-3.0.html GPLv3
+* @link     http://www.viveris.fr
+**/
+  header('Content-Type: text/html;charset=UTF-8');
+  require_once "./menus.php";
+  $lang = isset($_GET['lang']) ? $_GET['lang'] : "fr";
+  $page = isset($_GET['page']) ? $_GET['page'] : "about";
+  $title = getPageText($page);
 ?>
 <!doctype html>
 <html>
@@ -26,6 +39,7 @@ $title = getPageText($page);
   <script type="text/javascript" src="js/vendor/modernizr.js"></script>
   <script type="text/javascript" src="js/vendor/jquery.js"></script>
   <script type="text/javascript" src="js/foundation.min.js"></script>
+  <script type="text/javascript" src="js/readmore.js"></script>
 
   <title><?php echo $title; ?></title> 
 </head>
@@ -36,14 +50,22 @@ $title = getPageText($page);
     _paq.push(['trackPageView']);
     _paq.push(['enableLinkTracking']);
     (function() {
-      var u=(("https:" == document.location.protocol) ? "https" : "http") + "://opensource.viveris.fr/piwik//";
+      var u=(("https:" == document.location.protocol) ? "https" : "http")
+      + "://opensource.viveris.fr/piwik//";
       _paq.push(['setTrackerUrl', u+'piwik.php']);
       _paq.push(['setSiteId', 1]);
-      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
-      g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      var d=document, g=d.createElement('script'),
+      s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+      g.defer=true; g.async=true; g.src=u+'piwik.js';
+      s.parentNode.insertBefore(g,s);
     })();
   </script>
-  <noscript><p><img src="http://opensource.viveris.fr/piwik/piwik.php?idsite=1" style="border:0" alt="" /></p></noscript>
+  <noscript>
+    <p>
+      <img src="/piwik/piwik.php?idsite=1"
+      style="border:0" alt="" />
+    </p>
+  </noscript>
   <!-- End Piwik Code -->
 
   <div class="row full-width" style="background:black;" >
@@ -60,14 +82,15 @@ $title = getPageText($page);
     <div class="off-canvas-wrap docs-wrap " data-offcanvas="">
 
       <div class="inner-wrap">
-        <?php showTinyMenu($page,$lang); ?>
+        <?php showTinyMenu($page, $lang); ?>
         <section class="main-section shadow10 bottomradius">
           <div class="row full-width hide-for-small" style="margin-top:-6px;">
-            <?php showMenu($page,$lang); ?>
+            <?php showMenu($page, $lang); ?>
           </div>
           <div class="row">
-            <div class="columns large-3 medium-3 hide-for-small" style="text-align:center">
-              <?php include("gauche.php"); ?>
+            <div class="columns large-3 medium-3 hide-for-small"
+            style="text-align:center">
+              <?php require "gauche.html"; ?>
             </div>
             <div class="columns large-9 medium-9 text-justify">
               <?php showPage($page); ?>
@@ -83,7 +106,7 @@ $title = getPageText($page);
 
   <div class="row">
     <div class="columns large-12 shadow10" id="footer">
-      <?php require_once ("footer.php"); ?>
+      <?php require "footer.html"; ?>
     </div>
   </div>
   <p>&nbsp;</p>

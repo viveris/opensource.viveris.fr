@@ -1,26 +1,32 @@
 <?php
 /**
-* \file menus.php
-* \brief PHP drop down menu from xml file
+* File menus.php
+* PHP drop down menu from xml file
 *
 * PHP version 5
 *
 * @category PHP
 * @package  Menus
-* @author   Jean-Michel Leyrie <jean-michel.leyrie (at) viveris.fr>
+* @author   Jean-Michel Leyrie <jean-michel.leyrie@viveris.fr>
 * @license  http://www.gnu.org/licenses/gpl-3.0.html GPLv3
 * @link     http://www.viveris.fr
-
 **/
 
+/**
+* Classe Menu
+* @category PHP
+* @package  Menus
+* @author   Jean-Michel Leyrie <jean-michel.leyrie@viveris.fr>
+* @license  http://www.gnu.org/licenses/gpl-3.0.html GPLv3
+* @link     http://www.viveris.fr
+**/
 class CMenu
 {
 
-    /** \brief Copy constructor
+    /**
+    * Copy constructor
     *
     * @param [in] $i_name XML node to copy
-    *
-    * @return new instance
     */
     public function CMenu($i_name)
     {
@@ -31,7 +37,8 @@ class CMenu
         }
     }
 
-    /** \brief name accessor
+    /**
+    * Name accessor
     *
     * @return String "name"
     */
@@ -40,7 +47,8 @@ class CMenu
         return $this->name;
     }
 
-    /** \brief url accessor
+    /**
+    * Url accessor
     *
     * @return String "url"
     */
@@ -49,7 +57,8 @@ class CMenu
         return $this->url;
     }
 
-    /** \brief text accessor
+    /**
+    * Text accessor
     *
     * @return String "text"
     */
@@ -58,7 +67,8 @@ class CMenu
         return $this->text;
     }
 
-    /** \brief valid accessor
+    /**
+    * Valid accessor
     *
     * @return String "valid"
     */
@@ -67,7 +77,8 @@ class CMenu
         return $this->valid;
     }
     
-    /** \brief rank accessor
+    /**
+    * Rank accessor
     *
     * @return String "rank"
     */
@@ -76,7 +87,8 @@ class CMenu
         return $this->rank;
     }
     
-    /** \brief name anchor
+    /**
+    * Name anchor
     *
     * @return String "anchor"
     */
@@ -85,15 +97,16 @@ class CMenu
         return $this->anchor;
     }
     
-    private $name;   // Name
-    private $url;    // Url of the page to display
-    private $text;   // Text displayed in the url
+    private $_name;   // Name
+    private $_url;    // Url of the page to display
+    private $_text;   // Text displayed in the url
 
     static $fsm_inFolder = 0;
     static $fsm_numDiv   = 0;
 }
 
-/** \brief Read a complete XML file
+/**
+* Read a complete XML file
 *
 * @param [in] $filename to read
 *
@@ -132,7 +145,8 @@ function readDatabase($filename)
     return $tdb;
 }
 
-/** \brief Explode the contents of an array and map it in a class
+/**
+* Explode the contents of an array and map it in a class
 *
 * @param [in] $mvalues array to explode
 *
@@ -147,7 +161,8 @@ function parseMol($mvalues)
     return new CMenu($mol);
 }
 
-/** \brief Main entry point to display entire html menu structure
+/**
+* Main entry point to display entire html menu structure
 *
 * Display html code on standart output
 *
@@ -210,7 +225,8 @@ function showMenu($currentPage,$lang)
     echo "</div>\n";
 }
 
-/** \brief Include a file depending on its xml <id> field
+/**
+* Include a file depending on its xml <id> field
 *
 * @param [in] $currentPage page id to include
 *
@@ -221,8 +237,7 @@ function showPage($currentPage)
     $db = readDatabase("./menus.xml");
 
     for ($i = 0 ; $i< count($db); $i++) {
-        if (($db[$i]->getName() == $currentPage) &&
-            ($db[$i]->getUrl() != "")) {
+        if (($db[$i]->getName() == $currentPage) && ($db[$i]->getUrl() != "")) {
             include_once $db[$i]->getUrl();
             break;
         }
@@ -230,7 +245,8 @@ function showPage($currentPage)
     return $db[$i];
 }
 
-/** \brief Return the text argument of a page
+/**
+ * Return the text argument of a page
 *
 * @param [in] $page page id to get text field
 *

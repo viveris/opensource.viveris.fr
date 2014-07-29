@@ -101,4 +101,9 @@
   <changefreq>monthly</changefreq>
   <priority>0.51</priority>
 </url>
+<url>
+  <loc>http://opensource.viveris.fr/?page=recrutement&amp;lang=</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
 </urlset>

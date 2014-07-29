@@ -1,103 +1,117 @@
 <?php
 /**
-* \file menus.php
-* \brief PHP drop down menu from xml file
+* File menus.php
+* PHP drop down menu from xml file
 *
 * PHP version 5
 *
 * @category PHP
-* @package Menus
-* @author Jean-Michel Leyrie <jean-michel.leyrie (at) viveris.fr>
-* @license http://creativecommons.org/licenses/by-nc/4.0/ CC-BY-NC
-* @link http://www.viveris.fr
+* @package  Menus
+* @author   Jean-Michel Leyrie <jean-michel.leyrie@viveris.fr>
+* @license  http://creativecommons.org/licenses/by-nc/4.0/ CC-BY-NC
+* @link     http://www.viveris.fr
 **/
 
+/**
+* Classe Menu
+* @category PHP
+* @package  Menus
+* @author   Jean-Michel Leyrie <jean-michel.leyrie@viveris.fr>
+* @license  http://www.gnu.org/licenses/gpl-3.0.html GPLv3
+* @link     http://www.viveris.fr
+**/
 class CMenu
 {
 
-    /** \brief Copy constructor
-*
-* @param [in] $i_name XML node to copy
-*
-* @return new instance
-*/
-public function CMenu($i_name)
-{
-    if (is_array($i_name)) {
-        foreach ($i_name as $k=>$v) {
-            $this->$k = $i_name[$k];
+    /**
+    * Copy constructor
+    *
+    * @param [in] $i_name XML node to copy
+    */
+    public function CMenu($i_name)
+    {
+        if (is_array($i_name)) {
+            foreach ($i_name as $k=>$v) {
+                $this->$k = $i_name[$k];
+            }
         }
     }
-}
 
-    /** \brief name accessor
-*
-* @return String "name"
-*/
-public function getName()
-{
-    return $this->name;
-}
+    /**
+    * Name accessor
+    *
+    * @return String "name"
+    */
+    public function getName()
+    {
+        return $this->name;
+    }
 
-    /** \brief url accessor
-*
-* @return String "url"
-*/
-public function getUrl()
-{
-    return $this->url;
-}
+    /**
+    * Url accessor
+    *
+    * @return String "url"
+    */
+    public function getUrl()
+    {
+        return $this->url;
+    }
 
-    /** \brief text accessor
-*
-* @return String "text"
-*/
-public function getText()
-{
-    return $this->text;
-}
+    /**
+    * Text accessor
+    *
+    * @return String "text"
+    */
+    public function getText()
+    {
+        return $this->text;
+    }
 
-    /** \brief valid accessor
-*
-* @return String "valid"
-*/
-public function getValid()
-{
-    return $this->valid;
-}
+    /**
+    * Valid accessor
+    *
+    * @return String "valid"
+    */
+    public function getValid()
+    {
+        return $this->valid;
+    }
 
-    /** \brief rank accessor
-*
-* @return String "rank"
-*/
-public function getRank()
-{
-    return $this->rank;
-}
+    /**
+    * Rank accessor
+    *
+    * @return String "rank"
+    */
+    public function getRank()
+    {
+        return $this->rank;
+    }
 
-    /** \brief name anchor
-*
-* @return String "anchor"
-*/
-public function getAnchor()
-{
-    return $this->anchor;
-}
+    /**
+    * Name anchor
+    *
+    * @return String "anchor"
+    */
+    public function getAnchor()
+    {
+        return $this->anchor;
+    }
 
-    private $name; // Name
-    private $url; // Url of the page to display
-    private $text; // Text displayed in the url
+    private $_name; // Name
+    private $_url; // Url of the page to display
+    private $_text; // Text displayed in the url
 
     static $fsm_inFolder = 0;
     static $fsm_numDiv = 0;
 }
 
-/** \brief Read a complete XML file
+/**
+* Read a complete XML file
 *
 * @param [in] $filename to read
 *
 * @return XML file in an array style
-*/
+**/
 function readDatabase($filename)
 {
 
@@ -131,12 +145,13 @@ function readDatabase($filename)
     return $tdb;
 }
 
-/** \brief Explode the contents of an array and map it in a class
+/**
+* Explode the contents of an array and map it in a class
 *
 * @param [in] $mvalues array to explode
 *
 * @return New CMenu instance
-*/
+**/
 function parseMol($mvalues)
 {
     for ($i=0; $i < count($mvalues); $i++) {
@@ -146,15 +161,16 @@ function parseMol($mvalues)
     return new CMenu($mol);
 }
 
-/** \brief Main entry point to display entire html menu structure
+/**
+* Main entry point to display entire html menu structure
 *
 * Display html code on standart output
 *
 * @param [in] $currentPage Current page displayed
-* @param [in] $lang To return <text> in the right language
+* @param [in] $lang        To return <text> in the right language
 *
 * @return none
-*/
+**/
 function showMenu($currentPage,$lang)
 {
     $db = readDatabase("./menus.xml");
@@ -207,56 +223,60 @@ function showMenu($currentPage,$lang)
     echo "</div>\n";
 }
 
-/** \brief Include a file depending on its xml <id> field
+/**
+* Include a file depending on its xml <id> field
 *
 * @param [in] $currentPage page id to include
 *
 * @return none
-*/
+**/
 function showPage($currentPage)
 {
     $db = readDatabase("./menus.xml");
 
     for ($i = 0 ; $i< count($db); $i++) {
-        if (($db[$i]->getName() == $currentPage) &&
-            ($db[$i]->getUrl() != "")) {
+        if (($db[$i]->getName() == $currentPage) && ($db[$i]->getUrl() != "")) {
             include_once $db[$i]->getUrl();
-        break;
+            break;
+        }
     }
-}
-return $db[$i];
+    return $db[$i];
 }
 
-/** \brief Return the text argument of a page
+/**
+* Return the text argument of a page
 *
 * @param [in] $page page id to get text field
 *
 * @return text
-*/
+**/
 function getPageText($page)
 {
     $db = readDatabase("./menus.xml");
-    $text = "";
+    $_text = "";
     for ($i = 0 ; $i< count($db); $i++) {
         if ($db[$i]->getName() == $page) {
-            $text = $db[$i]->getText();
+            $_text = $db[$i]->getText();
             break;
         }
     }
-    return $text;
+    return $_text;
 }
 
-/** \brief Main entry point to display html menu structure for tiny screens
-*
-* Display html code on standart output, fitting Foundation's off-canvas
-* Update 18/07/14 - Added another button linking to "Nouvelles" on the other side of the bar
-* @author Nicolas Dages <contact (at) nicolas-dages.fr>
-*
+/**
+* Main entry point to display html menu structure for tiny screens
+* 
 * @param [in] $currentPage Current page displayed
-* @param [in] $lang To return <text> in the right language
+* @param [in] $lang        To return <text> in the right language
 *
 * @return none
-*/
+*
+* Display html code on standart output, fitting Foundation's off-canvas
+* Update 18/07/14 - Added another button linking to "Nouvelles"
+* on the other side of the bar
+*
+* @author Nicolas Dages <contact@nicolas-dages.fr>
+**/
 function showTinyMenu($currentPage,$lang)
 {
     $db = readDatabase("./menus.xml");
@@ -276,15 +296,15 @@ function showTinyMenu($currentPage,$lang)
     echo "<ul class=\"off-canvas-list\">\n";
 
     $fsm_inFolder = 0;
-    $bool_label = False;
+    $bool_label = false;
     for ($i = 0 ; $i< count($db); $i++) {
         if ($db[$i]->getValid() == "1") {
 
             //if (node in root folder) and (not yet in a folder)
-            if (($db[$i]->getRank() == 0) && ($fsm_inFolder == 0)){
+            if (($db[$i]->getRank() == 0) && ($fsm_inFolder == 0)) {
                 echo "\t<li><label>";
-                $bool_label = True;
-            }else{
+                $bool_label = true;
+            } else {
                 echo "\t<li>";
             }
             echo "<a href=\"?page=";
@@ -300,7 +320,7 @@ function showTinyMenu($currentPage,$lang)
             echo "</a>";
             if ($bool_label) {
                 echo "</label>";
-                $bool_label = False;
+                $bool_label = false;
             }
             echo "</li>\n";
             if ($fsm_inFolder == 1) {
@@ -310,7 +330,7 @@ function showTinyMenu($currentPage,$lang)
     }
     echo "</ul>\n</aside>\n";
     echo "<aside class=\"right-off-canvas-menu\">\n";
-    include "./gauche.php";
+    include "./gauche.html";
     echo "\n</aside>\n";    
 }
 

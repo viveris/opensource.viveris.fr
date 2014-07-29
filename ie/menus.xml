@@ -3,7 +3,7 @@
     <!-- Main page -->
     <item>
         <name>about</name>
-        <url>about.php</url>
+        <url>about.html</url>
         <text>Accueil</text>
         <valid>1</valid>
         <rank>0</rank>
@@ -12,28 +12,28 @@
     <!-- project: ROHC -->
     <item>
         <name>rohc</name>
-        <url>projects/rohc/rohc.php</url>
+        <url>projects/rohc/rohc.html</url>
         <text>Compression ROHC</text>
         <valid>1</valid>
         <rank>0</rank>
     </item>
     <item>
         <name>rohc-presentation</name>
-        <url>projects/rohc/rohc.php</url>
+        <url>projects/rohc/rohc.html</url>
         <text>Presentation</text>
         <valid>1</valid>
         <rank>1</rank>
     </item>
     <item>
         <name>rohc-library</name>
-        <url>projects/rohc/rohc_library.php</url>
+        <url>projects/rohc/rohc_library.html</url>
         <text>Librairie ROHC</text>
         <valid>1</valid>
         <rank>1</rank>
     </item>
     <item>
         <name>rohc-iprohc</name>
-        <url>projects/rohc/rohc_iprohc.php</url>
+        <url>projects/rohc/rohc_iprohc.html</url>
         <text>Tunnel IP/ROHC</text>
         <valid>1</valid>
         <rank>1</rank>
@@ -42,21 +42,21 @@
     <!-- project: OpenSAND -->
     <item>
         <name>opensand</name>
-        <url>projects/opensand/opensand.php</url>
+        <url>projects/opensand/opensand.html</url>
         <text>OpenSAND</text>
         <valid>1</valid>
         <rank>0</rank>
     </item>
     <item>
         <name>opensand-1</name>
-        <url>projects/opensand/opensand.php</url>
+        <url>projects/opensand/opensand.html</url>
         <text>OpenSAND</text>
         <valid>1</valid>
         <rank>1</rank>
     </item>
     <item>
         <name>opensans-gse</name>
-        <url>projects/opensand/opensand_gse.php</url>
+        <url>projects/opensand/opensand_gse.html</url>
         <text>GSE</text>
         <valid>1</valid>
         <rank>1</rank>
@@ -89,14 +89,14 @@
     <!-- project: Auxrames -->
     <item>
         <name>auxrames</name>
-        <url>projects/auxrames/auxrames.php</url>
+        <url>projects/auxrames/auxrames.html</url>
         <text>Auxrames</text>
         <valid>1</valid>
         <rank>0</rank>
     </item>
     <item>
         <name>auxrames-2</name>
-        <url>projects/auxrames/auxrames.php</url>
+        <url>projects/auxrames/auxrames.html</url>
         <text>Auxrames</text>
         <valid>1</valid>
         <rank>1</rank>
@@ -107,6 +107,15 @@
         <name>formation</name>
         <url>formation.html</url>
         <text>Formation</text>
+        <valid>1</valid>
+        <rank>0</rank>
+    </item>
+
+    <!-- recrutement -->
+    <item>
+        <name>emplois</name>
+        <url>recrutement.php</url>
+        <text>Emplois</text>
         <valid>1</valid>
         <rank>0</rank>
     </item>
