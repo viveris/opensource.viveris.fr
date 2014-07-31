@@ -20,9 +20,10 @@ require "./adm_emploi/bdd.php";
 * @param [in] $description  Description
 * @param [in] $agence       Agence
 * @param [in] $dateCreation Date de création
+* @param [in] $id ID de l'offre
 * @return Rien 
 **/
-function affOffre($titre, $type, $description, $agence, $dateCreation)
+function affOffre($titre, $type, $description, $agence, $dateCreation, $id)
 {
     echo '<div class="large-12 offre '.$agence.' '.$type.'">'."\n";
     echo '<div class="row entete">';
@@ -33,9 +34,13 @@ function affOffre($titre, $type, $description, $agence, $dateCreation)
     "\n";
     echo '<div class="row annonce">'."\n";
     echo $description."\n";
-    echo '<p class="datePublication">Mise en ligne le '.$dateCreation.'</p>'."\n";
+    echo '<p class="datePublication"><b>Mise en ligne le</b> '.$dateCreation.'</p>'."\n";
+    echo '<p class="reference"><b>Référence</b> : '.$agence.'-'.$id.'</p>'."\n";
     echo '<div style="width:100%;text-align:center;">';
-    echo '<input type="button" class="postuler" value="Postuler"/></div>'."\n";
+    echo '<input type="button" class="postuler" value="Postuler" ';
+    echo 'onclick="location.href=\'mailto:candidature_vt@viveris.fr?';
+    echo 'subject=OpenSource%20:%20Candidature%20offre%20'.$agence.'-'.$id.'\';"';
+    echo '/></div>'."\n";
     echo '<img class="icon reduire" src="/images/reduce.png" alt="Réduire" />'."\n";
     echo '</div>'."\n".'</div>'."\n";
 }
@@ -47,13 +52,13 @@ function affOffre($titre, $type, $description, $agence, $dateCreation)
 function afficherOffres()
 {
     $sql = "SELECT titre,type,description,agence,DATE_FORMAT(date_creation,
-        GET_FORMAT(DATE, 'EUR')) 
+        GET_FORMAT(DATE, 'EUR')),id 
         FROM `offres`
         WHERE `publier` != 0
         ORDER BY date_creation ASC";
     $reponse = mysql_query($sql);
     while ($tab = mysql_fetch_array($reponse)) {
-        affOffre($tab[0], $tab[1], $tab[2], $tab[3], $tab[4]);
+        affOffre($tab[0], $tab[1], $tab[2], $tab[3], $tab[4], $tab[5]);
     }
 }
 
@@ -102,11 +107,6 @@ function genFiltres()
 
     $(".entete").click(function(){
         $(this).parent().children(".annonce").toggle(500);
-    });
-
-
-    $(".postuler").click(function(){
-        alert("Rien n'est prévu pour l'instant");
     });
 
     $(".reduire").click(function(){
