@@ -1,0 +1,166 @@
+body
+{
+	font-size: large;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 150%;
+	color: black;
+	margin: 0;
+	padding: 0;
+	background-color: #efefef;
+}
+
+p
+{
+	margin: 1em 0;
+	padding: 0;
+}
+
+img
+{
+	border: 0;
+}
+
+acronym,
+abbr
+{
+	text-decoration: none;
+	border-bottom: thin dotted;
+}
+acronym:hover,
+abbr:hover
+{
+	cursor: help;
+}
+
+
+/* header */
+
+#header
+{
+	color: white;
+	background-color: #222328;
+	padding: 5px 15%;
+	height: 20em;
+	margin: 0;
+	border: 0;
+}
+
+#header img
+{
+	float: left;
+	height: 23em;
+	margin-right: 10em;
+}
+
+#header h1
+{
+	color: white;
+	background-color: #222328;
+	font-size: 300%;
+	line-height: 200%;
+	padding: 0.5em 15%;
+}
+
+
+/* content */
+
+#content
+{
+	clear: both;
+	margin: 0 auto;
+	width: 80%;
+	padding: 0;
+	clear: both;
+	text-align: justify;
+}
+
+#content a[href],
+#content a[href]:link
+{
+	color: #717171;
+	background-color: transparent;
+}
+#content a[href]:visited
+{
+	color: #414141;
+	background-color: transparent;
+}
+#content a[hreflang]:after
+{
+	content: "\00a0(" attr(hreflang) ")";
+}
+#content a[hreflang^="en"]:after
+{
+	content: "";
+}
+#content a[hreflang].nolang:after
+{
+	content: "";
+}
+#content a[href]:hover
+{
+	color: #6ea4d4;
+	background-color: transparent;
+}
+
+#content p
+{
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+#content #projects
+{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#content #projects li
+{
+	float: left;
+	margin: 1%;
+	padding: 1%;
+	width: 20%;
+	height: 27em;
+	text-align: center;
+	border: thin solid grey;
+	border-bottom: 2px solid grey;
+	border-right: 2px solid grey;
+	overflow: hidden;
+}
+#content #projects li h2
+{
+	font-weight: bold;
+	font-size: 150%;
+}
+#content #projects li img
+{
+	width: 50%;
+}
+#content #projects li p
+{
+	text-align: justify;
+}
+
+
+/* footer */
+
+#footer
+{
+	clear: both;
+	color: white;
+	background: #222328;
+	padding: 1em;
+	margin: 0;
+	line-height: 90%;
+	font-size: 80%;
+	height: 2em;
+}
+
+#footer a
+{
+	color: white;
+	text-decoration: none;
+	border-bottom: thin dotted;
+}
+
