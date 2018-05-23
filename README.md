@@ -14,7 +14,7 @@ Not defined yet.
 installation
 ------------
 
-Deploy within an Apache HTTPd virtualhost with PHP 5.x.
+Deploy within an Apache HTTPd virtualhost.
 
 authors
 -------
