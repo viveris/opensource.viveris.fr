@@ -9,7 +9,9 @@ The source code of the [Viveris OpenSource website](http://opensource.viveris.fr
 license
 -------
 
-Not defined yet.
+The source code (except the companies logos) is published under the Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA
+4.0) license.
 
 installation
 ------------
