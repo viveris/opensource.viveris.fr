@@ -107,6 +107,7 @@ abbr:hover
 	padding: 0;
 	clear: both;
 	text-align: center;
+	font-size: 120%;
 }
 
 #content a[href],
@@ -156,9 +157,9 @@ abbr:hover
 	float: left;
 	margin: 1em;
 	padding: 1em;
-	min-width: 15em;
-	max-width: 15em;
-	height: 27em;
+	min-width: 19%;
+	max-width: 19%;
+	height: 24em;
 	text-align: center;
 	border: thin solid grey;
 	border-bottom: 2px solid grey;
@@ -247,8 +248,7 @@ abbr:hover
 	padding: 1em;
 	margin: 0;
 	line-height: 90%;
-	font-size: 80%;
-	height: 2em;
+	min-height: 5em;
 }
 
 #footer a
